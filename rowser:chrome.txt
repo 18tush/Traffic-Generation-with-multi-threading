@@ -1,0 +1,105 @@
+==============================================================================
+20220727 13:56:06.756 - INFO - + START SUITE: Traffic01 [ ]
+==============================================================================
+20220727 13:56:06.986 - INFO - +- START TEST: Open browser with proxy [ ]
+------------------------------------------------------------------------------
+20220727 13:56:06.987 - INFO - +-- START FOR: ${user} IN [ @{users}[0:1] ] [ ]
+20220727 13:56:06.988 - INFO - +--- START ITERATION: ${user} = ['admin@pavan.com', 'Admin@123'] [ ]
+20220727 13:56:06.988 - INFO - +---- START KEYWORD: run.Open browser with proxy with user [ ${user} ]
+20220727 13:56:06.988 - INFO - +----- START KEYWORD: BuiltIn.Evaluate [ sys.modules['selenium.webdriver'].DesiredCapabilities.CHROME | sys, selenium.webdriver ]
+20220727 13:56:06.988 - INFO - ${caps} = {'browserName': 'chrome'}
+20220727 13:56:06.988 - INFO - +----- END KEYWORD: BuiltIn.Evaluate (0)
+20220727 13:56:06.988 - INFO - +----- START KEYWORD: BuiltIn.Create Dictionary [ proxyType=MANUAL | sslProxy=${ip_port} | httpProxy=${ip_port} ]
+20220727 13:56:06.989 - INFO - ${proxy} = {'proxyType': 'MANUAL', 'sslProxy': '10.66.103.62:50000', 'httpProxy': '10.66.103.62:50000'}
+20220727 13:56:06.989 - INFO - +----- END KEYWORD: BuiltIn.Create Dictionary (1)
+20220727 13:56:06.989 - INFO - +----- START KEYWORD: Collections.Set To Dictionary [ ${caps} | proxy=${proxy} ]
+20220727 13:56:06.989 - INFO - +----- END KEYWORD: Collections.Set To Dictionary (0)
+20220727 13:56:06.989 - INFO - +----- START KEYWORD: SeleniumLibrary.Open Browser [ https://ip.zscaler.com | browser=headlessChrome | desired_capabilities=${caps} | options=add_argument("--ignore-certificate-errors") ]
+20220727 13:56:06.989 - INFO - Opening browser 'headlessChrome' to base url 'https://ip.zscaler.com'.
+20220727 13:56:11.773 - DEBUG - Opened browser with session id 28d16ddfaee323a01bef1ee2a36b0030.
+20220727 13:56:11.773 - INFO - +----- END KEYWORD: SeleniumLibrary.Open Browser (4784)
+20220727 13:56:11.774 - INFO - +----- START KEYWORD: SeleniumLibrary.Maximize Browser Window [ ]
+20220727 13:56:11.878 - INFO - +----- END KEYWORD: SeleniumLibrary.Maximize Browser Window (104)
+20220727 13:56:11.878 - INFO - +----- START KEYWORD: SeleniumLibrary.Input Text [ xpath://*[@id="username_input"] | ${user}[0] ]
+20220727 13:56:11.879 - INFO - Typing text 'admin@pavan.com' into text field 'xpath://*[@id="username_input"]'.
+20220727 13:56:11.946 - INFO - +----- END KEYWORD: SeleniumLibrary.Input Text (68)
+20220727 13:56:11.946 - INFO - +----- START KEYWORD: SeleniumLibrary.Click Element [ xpath:/html/body/div/div/div/form/table[2]/tbody/tr/td/table[1]/tbody/tr[5]/td/table/tbody/tr/td[1]/input ]
+20220727 13:56:11.947 - INFO - Clicking element 'xpath:/html/body/div/div/div/form/table[2]/tbody/tr/td/table[1]/tbody/tr[5]/td/table/tbody/tr/td[1]/input'.
+20220727 13:56:14.320 - INFO - +----- END KEYWORD: SeleniumLibrary.Click Element (2373)
+20220727 13:56:14.320 - INFO - +----- START KEYWORD: SeleniumLibrary.Input Text [ xpath:/html/body/div/div/form/table[2]/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr[1]/td/div[2]/table[2]/tbody/tr/td/div/input | ${user}[1] ]
+20220727 13:56:14.320 - INFO - Typing text 'Admin@123' into text field 'xpath:/html/body/div/div/form/table[2]/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr[1]/td/div[2]/table[2]/tbody/tr/td/div/input'.
+20220727 13:56:14.359 - INFO - +----- END KEYWORD: SeleniumLibrary.Input Text (39)
+20220727 13:56:14.359 - INFO - +----- START KEYWORD: SeleniumLibrary.Click Element [ xpath:/html/body/div/div/form/table[2]/tbody/tr/td/table[1]/tbody/tr[3]/td/input ]
+20220727 13:56:14.360 - INFO - Clicking element 'xpath:/html/body/div/div/form/table[2]/tbody/tr/td/table[1]/tbody/tr[3]/td/input'.
+20220727 13:56:19.973 - INFO - +----- END KEYWORD: SeleniumLibrary.Click Element (5614)
+20220727 13:56:19.974 - INFO - +----- START KEYWORD: BuiltIn.Sleep [ 2 ]
+20220727 13:56:21.975 - INFO - Slept 2 seconds
+20220727 13:56:21.976 - INFO - +----- END KEYWORD: BuiltIn.Sleep (2002)
+20220727 13:56:21.976 - INFO - +----- START KEYWORD: BuiltIn.Evaluate [ ${counter}*${per_user} ]
+20220727 13:56:21.977 - INFO - ${from} = 0
+20220727 13:56:21.977 - INFO - +----- END KEYWORD: BuiltIn.Evaluate (1)
+20220727 13:56:21.978 - INFO - +----- START KEYWORD: BuiltIn.Evaluate [ ${counter}*${per_user}+${per_user} ]
+20220727 13:56:21.978 - INFO - ${to} = 0
+20220727 13:56:21.978 - INFO - +----- END KEYWORD: BuiltIn.Evaluate (0)
+20220727 13:56:21.978 - INFO - +----- START FOR: ${website} IN [ @{websites} ] [ ]
+20220727 13:56:21.979 - INFO - +------ START ITERATION: ${website} = http://www.aibai.cn/ [ ]
+20220727 13:56:21.979 - INFO - +------- START KEYWORD: BuiltIn.Log To Console [ ${website} ]
+20220727 13:56:21.979 - INFO - +------- END KEYWORD: BuiltIn.Log To Console (0)
+20220727 13:56:21.979 - INFO - +------- START KEYWORD: SeleniumLibrary.Execute Javascript [ window.open("${website}") ]
+20220727 13:56:21.980 - INFO - Executing JavaScript:
+window.open("http://www.aibai.cn/")
+Without any arguments.
+20220727 13:56:21.992 - INFO - +------- END KEYWORD: SeleniumLibrary.Execute Javascript (13)
+20220727 13:56:21.992 - INFO - +------ END ITERATION: ${website} = http://www.aibai.cn/ (13)
+20220727 13:56:21.992 - INFO - +------ START ITERATION: ${website} = http://www.beautyphoto.info/ [ ]
+20220727 13:56:21.993 - INFO - +------- START KEYWORD: BuiltIn.Log To Console [ ${website} ]
+20220727 13:56:21.993 - INFO - +------- END KEYWORD: BuiltIn.Log To Console (0)
+20220727 13:56:21.993 - INFO - +------- START KEYWORD: SeleniumLibrary.Execute Javascript [ window.open("${website}") ]
+20220727 13:56:21.994 - INFO - Executing JavaScript:
+window.open("http://www.beautyphoto.info/")
+Without any arguments.
+20220727 13:56:22.001 - INFO - +------- END KEYWORD: SeleniumLibrary.Execute Javascript (8)
+20220727 13:56:22.001 - INFO - +------ END ITERATION: ${website} = http://www.beautyphoto.info/ (9)
+20220727 13:56:22.001 - INFO - +------ START ITERATION: ${website} = http://www.loveadvice.info/ [ ]
+20220727 13:56:22.001 - INFO - +------- START KEYWORD: BuiltIn.Log To Console [ ${website} ]
+20220727 13:56:22.002 - INFO - +------- END KEYWORD: BuiltIn.Log To Console (0)
+20220727 13:56:22.002 - INFO - +------- START KEYWORD: SeleniumLibrary.Execute Javascript [ window.open("${website}") ]
+20220727 13:56:22.002 - INFO - Executing JavaScript:
+window.open("http://www.loveadvice.info/")
+Without any arguments.
+20220727 13:56:22.007 - INFO - +------- END KEYWORD: SeleniumLibrary.Execute Javascript (5)
+20220727 13:56:22.007 - INFO - +------ END ITERATION: ${website} = http://www.loveadvice.info/ (6)
+20220727 13:56:22.007 - INFO - +------ START ITERATION: ${website} = http://www.adultfilmclassics.com/ [ ]
+20220727 13:56:22.007 - INFO - +------- START KEYWORD: BuiltIn.Log To Console [ ${website} ]
+20220727 13:56:22.008 - INFO - +------- END KEYWORD: BuiltIn.Log To Console (1)
+20220727 13:56:22.008 - INFO - +------- START KEYWORD: SeleniumLibrary.Execute Javascript [ window.open("${website}") ]
+20220727 13:56:22.008 - INFO - Executing JavaScript:
+window.open("http://www.adultfilmclassics.com/")
+Without any arguments.
+20220727 13:56:22.013 - INFO - +------- END KEYWORD: SeleniumLibrary.Execute Javascript (5)
+20220727 13:56:22.013 - INFO - +------ END ITERATION: ${website} = http://www.adultfilmclassics.com/ (6)
+20220727 13:56:22.013 - INFO - +----- END FOR: ${website} IN [ @{websites} ] (35)
+20220727 13:56:22.013 - INFO - +----- START KEYWORD: BuiltIn.Evaluate [ ${counter}+1 ]
+20220727 13:56:22.014 - INFO - ${counter} = 1
+20220727 13:56:22.014 - INFO - +----- END KEYWORD: BuiltIn.Evaluate (1)
+20220727 13:56:22.014 - INFO - +----- START KEYWORD: BuiltIn.Log To Console [ ${counter} ]
+20220727 13:56:22.014 - INFO - +----- END KEYWORD: BuiltIn.Log To Console (0)
+20220727 13:56:22.014 - INFO - +----- START KEYWORD: BuiltIn.Log To Console [ ${from},${to},${user} ]
+20220727 13:56:22.014 - INFO - +----- END KEYWORD: BuiltIn.Log To Console (0)
+20220727 13:56:22.014 - INFO - +----- START KEYWORD: BuiltIn.Sleep [ 10 ]
+20220727 13:56:32.015 - INFO - Slept 10 seconds
+20220727 13:56:32.016 - INFO - +----- END KEYWORD: BuiltIn.Sleep (10002)
+20220727 13:56:32.017 - INFO - +----- START KEYWORD: SeleniumLibrary.Close Browser [ ]
+20220727 13:56:32.017 - DEBUG - Closing browser with session id 28d16ddfaee323a01bef1ee2a36b0030.
+20220727 13:56:32.081 - INFO - +----- END KEYWORD: SeleniumLibrary.Close Browser (64)
+20220727 13:56:32.082 - INFO - +---- END KEYWORD: run.Open browser with proxy with user (25094)
+20220727 13:56:32.082 - INFO - +--- END ITERATION: ${user} = ['admin@pavan.com', 'Admin@123'] (25094)
+20220727 13:56:32.082 - INFO - +-- END FOR: ${user} IN [ @{users}[0:1] ] (25095)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20220727 13:56:32.082 - INFO - +-- START KEYWORD: BuiltIn.Log To Console [ 1 ]
+20220727 13:56:32.082 - INFO - +-- END KEYWORD: BuiltIn.Log To Console (0)
+------------------------------------------------------------------------------
+20220727 13:56:32.087 - INFO - +- END TEST: Open browser with proxy (25097)
+------------------------------------------------------------------------------
+20220727 13:56:32.091 - INFO - + END SUITE: Traffic01 (25723)
+==============================================================================

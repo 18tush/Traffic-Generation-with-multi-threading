@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on darwin)" generated="20220728 12:20:31.693" rpa="false" schemaversion="3">
+<suite id="s1" name="Dynamic" source="/Users/tusharys/Desktop/pabottest/dynamic">
+<suite id="s1-s1" name="Traffic06" source="/Users/tusharys/Desktop/pabottest/dynamic/traffic06.robot">
+<test id="s1-s1-t1" name="Open browser with proxy" line="19">
+<for flavor="IN">
+<var>${user}</var>
+<value>@{users}[96:97]</value>
+<iter>
+<var name="${user}">['ww7@nithin.com', 'Admin@123']</var>
+<kw name="Open browser with proxy with user" library="run">
+<arg>${user}</arg>
+<kw name="Evaluate" library="BuiltIn">
+<var>${caps}</var>
+<arg>sys.modules['selenium.webdriver'].DesiredCapabilities.CHROME</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220728 12:20:33.079" level="INFO">${caps} = {'browserName': 'chrome'}</msg>
+<status status="PASS" starttime="20220728 12:20:33.079" endtime="20220728 12:20:33.080"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${proxy}</var>
+<arg>proxyType=MANUAL</arg>
+<arg>sslProxy=${ip_port}</arg>
+<arg>httpProxy=${ip_port}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220728 12:20:33.080" level="INFO">${proxy} = {'proxyType': 'MANUAL', 'sslProxy': '10.66.103.62:50000', 'httpProxy': '10.66.103.62:50000'}</msg>
+<status status="PASS" starttime="20220728 12:20:33.080" endtime="20220728 12:20:33.080"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${caps}</arg>
+<arg>proxy=${proxy}</arg>
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20220728 12:20:33.080" endtime="20220728 12:20:33.080"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://ip.zscaler.com</arg>
+<arg>browser=headlessChrome</arg>
+<arg>desired_capabilities=${caps}</arg>
+<arg>options=add_argument("--ignore-certificate-errors")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220728 12:20:33.080" level="INFO">Opening browser 'headlessChrome' to base url 'https://ip.zscaler.com'.</msg>
+<status status="PASS" starttime="20220728 12:20:33.080" endtime="20220728 12:20:40.231"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220728 12:20:40.231" endtime="20220728 12:20:40.337"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://*[@id="username_input"]</arg>
+<arg>${user}[0]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220728 12:20:40.339" level="INFO">Typing text 'ww7@nithin.com' into text field 'xpath://*[@id="username_input"]'.</msg>
+<status status="PASS" starttime="20220728 12:20:40.338" endtime="20220728 12:20:40.429"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath:/html/body/div/div/div/form/table[2]/tbody/tr/td/table[1]/tbody/tr[5]/td/table/tbody/tr/td[1]/input</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220728 12:20:40.429" level="INFO">Clicking element 'xpath:/html/body/div/div/div/form/table[2]/tbody/tr/td/table[1]/tbody/tr[5]/td/table/tbody/tr/td[1]/input'.</msg>
+<status status="PASS" starttime="20220728 12:20:40.429" endtime="20220728 12:20:42.346"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath:/html/body/div/div/form/table[2]/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr[1]/td/div[2]/table[2]/tbody/tr/td/div/input</arg>
+<arg>${user}[1]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220728 12:20:42.347" level="INFO">Typing text 'Admin@123' into text field 'xpath:/html/body/div/div/form/table[2]/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr[1]/td/div[2]/table[2]/tbody/tr/td/div/input'.</msg>
+<status status="PASS" starttime="20220728 12:20:42.347" endtime="20220728 12:20:42.383"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath:/html/body/div/div/form/table[2]/tbody/tr/td/table[1]/tbody/tr[3]/td/input</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220728 12:20:42.384" level="INFO">Clicking element 'xpath:/html/body/div/div/form/table[2]/tbody/tr/td/table[1]/tbody/tr[3]/td/input'.</msg>
+<status status="PASS" starttime="20220728 12:20:42.383" endtime="20220728 12:20:55.493"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220728 12:20:57.497" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220728 12:20:55.494" endtime="20220728 12:20:57.498"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${from}</var>
+<arg>${counter}*${per_user}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220728 12:20:57.501" level="INFO">${from} = 0</msg>
+<status status="PASS" starttime="20220728 12:20:57.499" endtime="20220728 12:20:57.501"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${to}</var>
+<arg>${counter}*${per_user}+${per_user}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220728 12:20:57.506" level="INFO">${to} = 0</msg>
+<status status="PASS" starttime="20220728 12:20:57.502" endtime="20220728 12:20:57.506"/>
+</kw>
+<for flavor="IN">
+<var>${website}</var>
+<value>@{websites}</value>
+<iter>
+<var name="${website}">http://www.aibai.cn/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220728 12:20:57.508" endtime="20220728 12:20:57.508"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220728 12:20:57.510" level="INFO">Executing JavaScript:
+window.open("http://www.aibai.cn/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220728 12:20:57.509" endtime="20220728 12:20:57.525"/>
+</kw>
+<status status="PASS" starttime="20220728 12:20:57.507" endtime="20220728 12:20:57.525"/>
+</iter>
+<iter>
+<var name="${website}">http://www.beautyphoto.info/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220728 12:20:57.525" endtime="20220728 12:20:57.526"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220728 12:20:57.527" level="INFO">Executing JavaScript:
+window.open("http://www.beautyphoto.info/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220728 12:20:57.526" endtime="20220728 12:20:57.535"/>
+</kw>
+<status status="PASS" starttime="20220728 12:20:57.525" endtime="20220728 12:20:57.536"/>
+</iter>
+<iter>
+<var name="${website}">http://www.loveadvice.info/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220728 12:20:57.536" endtime="20220728 12:20:57.536"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220728 12:20:57.537" level="INFO">Executing JavaScript:
+window.open("http://www.loveadvice.info/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220728 12:20:57.536" endtime="20220728 12:20:57.544"/>
+</kw>
+<status status="PASS" starttime="20220728 12:20:57.536" endtime="20220728 12:20:57.545"/>
+</iter>
+<iter>
+<var name="${website}">http://www.adultfilmclassics.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220728 12:20:57.545" endtime="20220728 12:20:57.545"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220728 12:20:57.546" level="INFO">Executing JavaScript:
+window.open("http://www.adultfilmclassics.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220728 12:20:57.545" endtime="20220728 12:20:57.552"/>
+</kw>
+<status status="PASS" starttime="20220728 12:20:57.545" endtime="20220728 12:20:57.552"/>
+</iter>
+<status status="PASS" starttime="20220728 12:20:57.506" endtime="20220728 12:20:57.552"/>
+</for>
+<kw name="Evaluate" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220728 12:20:57.553" level="INFO">${counter} = 1</msg>
+<status status="PASS" starttime="20220728 12:20:57.553" endtime="20220728 12:20:57.553"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${counter}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220728 12:20:57.553" endtime="20220728 12:20:57.553"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${from},${to},${user}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220728 12:20:57.553" endtime="20220728 12:20:57.554"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220728 12:21:07.555" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20220728 12:20:57.554" endtime="20220728 12:21:07.556"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220728 12:21:07.557" endtime="20220728 12:21:07.624"/>
+</kw>
+<status status="PASS" starttime="20220728 12:20:33.079" endtime="20220728 12:21:07.625"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>1</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220728 12:21:07.625" endtime="20220728 12:21:07.626"/>
+</kw>
+<status status="PASS" starttime="20220728 12:20:33.079" endtime="20220728 12:21:07.626"/>
+</iter>
+<status status="PASS" starttime="20220728 12:20:33.079" endtime="20220728 12:21:07.626"/>
+</for>
+<status status="PASS" starttime="20220728 12:20:33.075" endtime="20220728 12:21:07.626"/>
+</test>
+<status status="PASS" starttime="20220728 12:20:31.703" endtime="20220728 12:21:07.631"/>
+</suite>
+<status status="PASS" starttime="20220728 12:20:31.696" endtime="20220728 12:21:07.635"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Dynamic">Dynamic</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Traffic06">Dynamic.Traffic06</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

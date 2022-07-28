@@ -1,0 +1,26 @@
+==============================================================================
+Dynamic                                                                       
+==============================================================================
+4
+[['admin@pavan.com', 'Admin@123'], ['admin@nithin.com', 'Admin@123'], ['kannan@nithin.com', 'Admin@123'], ['dev@nithin.com', 'Admin@123'], ['mani@nithin.com', 'Admin@123'], ['admin@nitish.com', 'Admin@123'], ['ayanna.sawyer@nithin.com', 'Admin@123'], ['benjamin.howorth@nithin.com', 'Admin@123'], ['christy.prince@nithin.com', 'Admin@123'], ['jan.lineberry@nithin.com', 'Admin@123'], ['namrata.havaldar@nithin.com', 'Admin@123'], ['noah.abrahams@nithin.com', 'Admin@123'], ['rekha.ramakrishnan@nithin.com', 'Admin@123'], ['ugandra.s@nithin.com', 'Admin@123'], ['chris.leach@nithin.com', 'Admin@123'], ['aaaa@nithin.com', 'Admin@123'], ['aakash@nithin.com', 'Admin@123'], ['abc@nithin.com', 'Admin@123'], ['admin6@nithin.com', 'Admin@123'], ['auditor@nithin.com', 'Admin@123'], ['auto@nithin.com', 'Admin@123'], ['avijit@nithin.com', 'Admin@123'], ['convertadmin@nithin.com', 'Admin@123'], ['devidp@nithin.com', 'Admin@123'], ['email@nithin.com', 'Admin@123'], ['helen.higinio@nithin.com', 'Admin@123'], ['izamar.flores@nithin.com', 'Admin@123'], ['john.doe1@nithin.com', 'Admin@123'], ['julia.ziobro@nithin.com', 'Admin@123'], ['molly.pickard@nithin.com', 'Admin@123'], ['mounika1@nithin.com', 'Admin@123'], ['mounika@nithin.com', 'Admin@123'], ['niveditha.natarajan@nithin.com', 'Admin@123'], ['noauthscope@nithin.com', 'Admin@123'], ['nogre@nithin.com', 'Admin@123'], ['noperm@nithin.com', 'Admin@123'], ['nostaticip@nithin.com', 'Admin@123'], ['nostaticnogre@nithin.com', 'Admin@123'], ['notenant@nithin.com', 'Admin@123'], ['nozcc@nithin.com', 'Admin@123'], ['policyviewonly@nithin.com', 'Admin@123'], ['prateek@nithin.com', 'Admin@123'], ['pushkar@nithin.com', 'Admin@123'], ['rank7@nithin.com', 'Admin@123'], ['readonly@nithin.com', 'Admin@123'], ['regular_admin_1@nithin.com', 'Admin@123'], ['sunita.verma@nithin.com', 'Admin@123'], ['test12345_test12345678@nithin.com', 'Admin@123'], ['test123@nithin.com', 'Admin@123'], ['test21@nithin.com', 'Admin@123'], ['test89@nithin.com', 'Admin@123'], ['test@nithin.com', 'Admin@123'], ['test_67890.testing@nithin.com', 'Admin@123'], ['testbug@nithin.com', 'Admin@123'], ['testbugonprioirity@nithin.com', 'Admin@123'], ['testemail@nithin.com', 'Admin@123'], ['testmobile@nithin.com', 'Admin@123'], ['testmounika123@nithin.com', 'Admin@123'], ['testmounika@nithin.com', 'Admin@123'], ['testuser@nithin.com', 'Admin@123'], ['tttt@nithin.com', 'Admin@123'], ['tushar@nithin.com', 'Admin@123'], ['vinod@nithin.com', 'Admin@123'], ['vishnu.neeli@nithin.com', 'Admin@123'], ['ww10@nithin.com', 'Admin@123'], ['ww11@nithin.com', 'Admin@123'], ['ww12@nithin.com', 'Admin@123'], ['ww13@nithin.com', 'Admin@123'], ['ww14@nithin.com', 'Admin@123'], ['ww15@nithin.com', 'Admin@123'], ['ww16@nithin.com', 'Admin@123'], ['ww17@nithin.com', 'Admin@123'], ['ww18@nithin.com', 'Admin@123'], ['ww19@nithin.com', 'Admin@123'], ['ww1@nithin.com', 'Admin@123'], ['ww20@nithin.com', 'Admin@123'], ['ww21@nithin.com', 'Admin@123'], ['ww22@nithin.com', 'Admin@123'], ['ww23@nithin.com', 'Admin@123'], ['ww24@nithin.com', 'Admin@123'], ['ww25@nithin.com', 'Admin@123'], ['ww26@nithin.com', 'Admin@123'], ['ww27@nithin.com', 'Admin@123'], ['ww28@nithin.com', 'Admin@123'], ['ww29@nithin.com', 'Admin@123'], ['ww2@nithin.com', 'Admin@123'], ['ww30@nithin.com', 'Admin@123'], ['ww31@nithin.com', 'Admin@123'], ['ww32@nithin.com', 'Admin@123'], ['ww33@nithin.com', 'Admin@123'], ['ww34@nithin.com', 'Admin@123'], ['ww35@nithin.com', 'Admin@123'], ['ww3@nithin.com', 'Admin@123'], ['ww4@nithin.com', 'Admin@123'], ['ww5@nithin.com', 'Admin@123'], ['ww6@nithin.com', 'Admin@123'], ['ww7@nithin.com', 'Admin@123'], ['ww8@nithin.com', 'Admin@123'], ['ww9@nithin.com', 'Admin@123'], ['example1@nithin.com', 'Admin@123'], ['example2@nithin.com', 'Admin@123'], ['example3@nithin.com', 'Admin@123']]
+0
+['http://www.aibai.cn/', 'http://www.beautyphoto.info/', 'http://www.loveadvice.info/', 'http://www.adultfilmclassics.com/']
+10.66.103.62:50000
+Dynamic.Traffic09                                                             
+==============================================================================
+Open browser with proxy                                               http://www.aibai.cn/
+http://www.beautyphoto.info/
+http://www.loveadvice.info/
+http://www.adultfilmclassics.com/
+1
+0,0,['example1@nithin.com', 'Admin@123']
+1
+| PASS |
+------------------------------------------------------------------------------
+Dynamic.Traffic09                                                     | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Dynamic                                                               | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Output:  /Users/tusharys/Desktop/pabottest/pabot_results/9/output.xml
