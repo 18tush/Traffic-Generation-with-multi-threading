@@ -26,8 +26,8 @@ for i in range(10):
 
 
             
-# for i in all_files:
-#     os.remove(i)
+for i in all_files:
+    os.remove(i)
 
 
     

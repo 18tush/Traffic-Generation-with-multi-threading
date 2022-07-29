@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.5 on darwin)" generated="20220727 17:38:33.468" rpa="false" schemaversion="3">
-<suite id="s1" name="Traffic01" source="/Users/tusharys/Desktop/pabottest/dynamic/traffic01.robot">
+<robot generator="Robot 5.0.1 (Python 3.10.5 on darwin)" generated="20220729 11:19:20.973" rpa="false" schemaversion="3">
+<suite id="s1" name="Traffic04" source="/Users/tusharys/Desktop/pabottest/dynamic/traffic04.robot">
 <test id="s1-t1" name="Open browser with proxy" line="19">
 <for flavor="IN">
 <var>${user}</var>
-<value>@{users}[1:2]</value>
+<value>@{users}[4:5]</value>
 <iter>
-<var name="${user}">['admin@nithin.com', 'Admin@123']</var>
+<var name="${user}">['mani@nithin.com', 'Admin@123']</var>
 <kw name="Open browser with proxy with user" library="run">
 <arg>${user}</arg>
+<arg>${websites}[104:208]</arg>
 <kw name="Evaluate" library="BuiltIn">
 <var>${caps}</var>
 <arg>sys.modules['selenium.webdriver'].DesiredCapabilities.CHROME</arg>
 <arg>sys, selenium.webdriver</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20220727 17:38:34.034" level="INFO">${caps} = {'browserName': 'chrome'}</msg>
-<status status="PASS" starttime="20220727 17:38:34.034" endtime="20220727 17:38:34.034"/>
+<msg timestamp="20220729 11:19:21.681" level="INFO">${caps} = {'browserName': 'chrome'}</msg>
+<status status="PASS" starttime="20220729 11:19:21.681" endtime="20220729 11:19:21.681"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${proxy}</var>
@@ -23,188 +24,1888 @@
 <arg>sslProxy=${ip_port}</arg>
 <arg>httpProxy=${ip_port}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220727 17:38:34.035" level="INFO">${proxy} = {'proxyType': 'MANUAL', 'sslProxy': '10.66.103.62:50000', 'httpProxy': '10.66.103.62:50000'}</msg>
-<status status="PASS" starttime="20220727 17:38:34.034" endtime="20220727 17:38:34.035"/>
+<msg timestamp="20220729 11:19:21.682" level="INFO">${proxy} = {'proxyType': 'MANUAL', 'sslProxy': '10.66.103.62:50000', 'httpProxy': '10.66.103.62:50000'}</msg>
+<status status="PASS" starttime="20220729 11:19:21.681" endtime="20220729 11:19:21.682"/>
 </kw>
 <kw name="Set To Dictionary" library="Collections">
 <arg>${caps}</arg>
 <arg>proxy=${proxy}</arg>
 <doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
-<status status="PASS" starttime="20220727 17:38:34.035" endtime="20220727 17:38:34.035"/>
+<status status="PASS" starttime="20220729 11:19:21.682" endtime="20220729 11:19:21.682"/>
 </kw>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>https://ip.zscaler.com</arg>
-<arg>browser=headlessChrome</arg>
+<arg>browser=Chrome</arg>
 <arg>desired_capabilities=${caps}</arg>
 <arg>options=add_argument("--ignore-certificate-errors")</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220727 17:38:34.035" level="INFO">Opening browser 'headlessChrome' to base url 'https://ip.zscaler.com'.</msg>
-<status status="PASS" starttime="20220727 17:38:34.035" endtime="20220727 17:38:38.412"/>
+<msg timestamp="20220729 11:19:21.682" level="INFO">Opening browser 'Chrome' to base url 'https://ip.zscaler.com'.</msg>
+<status status="PASS" starttime="20220729 11:19:21.682" endtime="20220729 11:19:27.861"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220727 17:38:38.412" endtime="20220727 17:38:38.517"/>
+<status status="PASS" starttime="20220729 11:19:27.861" endtime="20220729 11:19:27.981"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>xpath://*[@id="username_input"]</arg>
 <arg>${user}[0]</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220727 17:38:38.518" level="INFO">Typing text 'admin@nithin.com' into text field 'xpath://*[@id="username_input"]'.</msg>
-<status status="PASS" starttime="20220727 17:38:38.517" endtime="20220727 17:38:38.595"/>
+<msg timestamp="20220729 11:19:27.982" level="INFO">Typing text 'mani@nithin.com' into text field 'xpath://*[@id="username_input"]'.</msg>
+<status status="PASS" starttime="20220729 11:19:27.982" endtime="20220729 11:19:28.044"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath:/html/body/div/div/div/form/table[2]/tbody/tr/td/table[1]/tbody/tr[5]/td/table/tbody/tr/td[1]/input</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220727 17:38:38.596" level="INFO">Clicking element 'xpath:/html/body/div/div/div/form/table[2]/tbody/tr/td/table[1]/tbody/tr[5]/td/table/tbody/tr/td[1]/input'.</msg>
-<status status="PASS" starttime="20220727 17:38:38.595" endtime="20220727 17:38:40.741"/>
+<msg timestamp="20220729 11:19:28.044" level="INFO">Clicking element 'xpath:/html/body/div/div/div/form/table[2]/tbody/tr/td/table[1]/tbody/tr[5]/td/table/tbody/tr/td[1]/input'.</msg>
+<status status="PASS" starttime="20220729 11:19:28.044" endtime="20220729 11:19:30.017"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>xpath:/html/body/div/div/form/table[2]/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr[1]/td/div[2]/table[2]/tbody/tr/td/div/input</arg>
 <arg>${user}[1]</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220727 17:38:40.742" level="INFO">Typing text 'Admin@123' into text field 'xpath:/html/body/div/div/form/table[2]/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr[1]/td/div[2]/table[2]/tbody/tr/td/div/input'.</msg>
-<status status="PASS" starttime="20220727 17:38:40.742" endtime="20220727 17:38:40.787"/>
+<msg timestamp="20220729 11:19:30.018" level="INFO">Typing text 'Admin@123' into text field 'xpath:/html/body/div/div/form/table[2]/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr[1]/td/div[2]/table[2]/tbody/tr/td/div/input'.</msg>
+<status status="PASS" starttime="20220729 11:19:30.018" endtime="20220729 11:19:30.063"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath:/html/body/div/div/form/table[2]/tbody/tr/td/table[1]/tbody/tr[3]/td/input</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220727 17:38:40.787" level="INFO">Clicking element 'xpath:/html/body/div/div/form/table[2]/tbody/tr/td/table[1]/tbody/tr[3]/td/input'.</msg>
-<status status="PASS" starttime="20220727 17:38:40.787" endtime="20220727 17:38:52.093"/>
+<msg timestamp="20220729 11:19:30.063" level="INFO">Clicking element 'xpath:/html/body/div/div/form/table[2]/tbody/tr/td/table[1]/tbody/tr[3]/td/input'.</msg>
+<status status="PASS" starttime="20220729 11:19:30.063" endtime="20220729 11:19:46.774"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220727 17:38:54.095" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20220727 17:38:52.093" endtime="20220727 17:38:54.095"/>
+<msg timestamp="20220729 11:19:48.779" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220729 11:19:46.775" endtime="20220729 11:19:48.780"/>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <var>${from}</var>
 <arg>${counter}*${per_user}</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20220727 17:38:54.096" level="INFO">${from} = 0</msg>
-<status status="PASS" starttime="20220727 17:38:54.095" endtime="20220727 17:38:54.096"/>
+<msg timestamp="20220729 11:19:48.781" level="INFO">${from} = 0</msg>
+<status status="PASS" starttime="20220729 11:19:48.780" endtime="20220729 11:19:48.781"/>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <var>${to}</var>
 <arg>${counter}*${per_user}+${per_user}</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20220727 17:38:54.096" level="INFO">${to} = 0</msg>
-<status status="PASS" starttime="20220727 17:38:54.096" endtime="20220727 17:38:54.097"/>
+<msg timestamp="20220729 11:19:48.782" level="INFO">${to} = 102</msg>
+<status status="PASS" starttime="20220729 11:19:48.782" endtime="20220729 11:19:48.782"/>
 </kw>
 <for flavor="IN">
 <var>${website}</var>
 <value>@{websites}</value>
 <iter>
-<var name="${website}">http://www.aibai.cn/</var>
+<var name="${website}">http://www.xcashnetwork.com/</var>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${website}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220727 17:38:54.097" endtime="20220727 17:38:54.098"/>
+<status status="PASS" starttime="20220729 11:19:48.783" endtime="20220729 11:19:48.784"/>
 </kw>
 <kw name="Execute Javascript" library="SeleniumLibrary">
 <arg>window.open("${website}")</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<msg timestamp="20220727 17:38:54.099" level="INFO">Executing JavaScript:
-window.open("http://www.aibai.cn/")
+<msg timestamp="20220729 11:19:48.788" level="INFO">Executing JavaScript:
+window.open("http://www.xcashnetwork.com/")
 Without any arguments.</msg>
-<status status="PASS" starttime="20220727 17:38:54.098" endtime="20220727 17:38:54.109"/>
+<status status="PASS" starttime="20220729 11:19:48.784" endtime="20220729 11:19:48.834"/>
 </kw>
-<status status="PASS" starttime="20220727 17:38:54.097" endtime="20220727 17:38:54.109"/>
+<status status="PASS" starttime="20220729 11:19:48.783" endtime="20220729 11:19:48.834"/>
 </iter>
 <iter>
-<var name="${website}">http://www.beautyphoto.info/</var>
+<var name="${website}">http://www.sheepywarez.net/</var>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${website}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220727 17:38:54.109" endtime="20220727 17:38:54.109"/>
+<status status="PASS" starttime="20220729 11:19:48.834" endtime="20220729 11:19:48.835"/>
 </kw>
 <kw name="Execute Javascript" library="SeleniumLibrary">
 <arg>window.open("${website}")</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<msg timestamp="20220727 17:38:54.110" level="INFO">Executing JavaScript:
-window.open("http://www.beautyphoto.info/")
+<msg timestamp="20220729 11:19:48.835" level="INFO">Executing JavaScript:
+window.open("http://www.sheepywarez.net/")
 Without any arguments.</msg>
-<status status="PASS" starttime="20220727 17:38:54.109" endtime="20220727 17:38:54.117"/>
+<status status="PASS" starttime="20220729 11:19:48.835" endtime="20220729 11:19:48.850"/>
 </kw>
-<status status="PASS" starttime="20220727 17:38:54.109" endtime="20220727 17:38:54.117"/>
+<status status="PASS" starttime="20220729 11:19:48.834" endtime="20220729 11:19:48.850"/>
 </iter>
 <iter>
-<var name="${website}">http://www.loveadvice.info/</var>
+<var name="${website}">http://www.fleshlightinfo.com/</var>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${website}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220727 17:38:54.117" endtime="20220727 17:38:54.117"/>
+<status status="PASS" starttime="20220729 11:19:48.850" endtime="20220729 11:19:48.850"/>
 </kw>
 <kw name="Execute Javascript" library="SeleniumLibrary">
 <arg>window.open("${website}")</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<msg timestamp="20220727 17:38:54.118" level="INFO">Executing JavaScript:
-window.open("http://www.loveadvice.info/")
+<msg timestamp="20220729 11:19:48.851" level="INFO">Executing JavaScript:
+window.open("http://www.fleshlightinfo.com/")
 Without any arguments.</msg>
-<status status="PASS" starttime="20220727 17:38:54.118" endtime="20220727 17:38:54.125"/>
+<status status="PASS" starttime="20220729 11:19:48.850" endtime="20220729 11:19:48.860"/>
 </kw>
-<status status="PASS" starttime="20220727 17:38:54.117" endtime="20220727 17:38:54.125"/>
+<status status="PASS" starttime="20220729 11:19:48.850" endtime="20220729 11:19:48.860"/>
 </iter>
 <iter>
-<var name="${website}">http://www.adultfilmclassics.com/</var>
+<var name="${website}">http://www.gameres.com/</var>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${website}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220727 17:38:54.125" endtime="20220727 17:38:54.125"/>
+<status status="PASS" starttime="20220729 11:19:48.861" endtime="20220729 11:19:48.861"/>
 </kw>
 <kw name="Execute Javascript" library="SeleniumLibrary">
 <arg>window.open("${website}")</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<msg timestamp="20220727 17:38:54.126" level="INFO">Executing JavaScript:
-window.open("http://www.adultfilmclassics.com/")
+<msg timestamp="20220729 11:19:48.861" level="INFO">Executing JavaScript:
+window.open("http://www.gameres.com/")
 Without any arguments.</msg>
-<status status="PASS" starttime="20220727 17:38:54.125" endtime="20220727 17:38:54.132"/>
+<status status="PASS" starttime="20220729 11:19:48.861" endtime="20220729 11:19:48.873"/>
 </kw>
-<status status="PASS" starttime="20220727 17:38:54.125" endtime="20220727 17:38:54.132"/>
+<status status="PASS" starttime="20220729 11:19:48.860" endtime="20220729 11:19:48.873"/>
 </iter>
-<status status="PASS" starttime="20220727 17:38:54.097" endtime="20220727 17:38:54.132"/>
+<iter>
+<var name="${website}">http://www.singlenudist.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:48.873" endtime="20220729 11:19:48.873"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:48.874" level="INFO">Executing JavaScript:
+window.open("http://www.singlenudist.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:48.873" endtime="20220729 11:19:48.890"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:48.873" endtime="20220729 11:19:48.890"/>
+</iter>
+<iter>
+<var name="${website}">http://www.mytwistedmind.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:48.890" endtime="20220729 11:19:48.890"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:48.890" level="INFO">Executing JavaScript:
+window.open("http://www.mytwistedmind.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:48.890" endtime="20220729 11:19:48.901"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:48.890" endtime="20220729 11:19:48.901"/>
+</iter>
+<iter>
+<var name="${website}">http://www.chaotic-gods.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:48.901" endtime="20220729 11:19:48.901"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:48.902" level="INFO">Executing JavaScript:
+window.open("http://www.chaotic-gods.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:48.901" endtime="20220729 11:19:48.914"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:48.901" endtime="20220729 11:19:48.914"/>
+</iter>
+<iter>
+<var name="${website}">http://www.allknightaccess.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:48.914" endtime="20220729 11:19:48.915"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:48.915" level="INFO">Executing JavaScript:
+window.open("http://www.allknightaccess.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:48.915" endtime="20220729 11:19:48.928"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:48.914" endtime="20220729 11:19:48.928"/>
+</iter>
+<iter>
+<var name="${website}">http://www.astromatch.net/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:48.928" endtime="20220729 11:19:48.928"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:48.928" level="INFO">Executing JavaScript:
+window.open("http://www.astromatch.net/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:48.928" endtime="20220729 11:19:48.940"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:48.928" endtime="20220729 11:19:48.940"/>
+</iter>
+<iter>
+<var name="${website}">http://www.yesnomaybe.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:48.940" endtime="20220729 11:19:48.940"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:48.940" level="INFO">Executing JavaScript:
+window.open("http://www.yesnomaybe.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:48.940" endtime="20220729 11:19:48.956"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:48.940" endtime="20220729 11:19:48.956"/>
+</iter>
+<iter>
+<var name="${website}">http://www.flowinglove.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:48.956" endtime="20220729 11:19:48.957"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:48.957" level="INFO">Executing JavaScript:
+window.open("http://www.flowinglove.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:48.957" endtime="20220729 11:19:48.967"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:48.956" endtime="20220729 11:19:48.967"/>
+</iter>
+<iter>
+<var name="${website}">http://www.voidgamers.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:48.967" endtime="20220729 11:19:48.967"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:48.968" level="INFO">Executing JavaScript:
+window.open("http://www.voidgamers.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:48.967" endtime="20220729 11:19:48.981"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:48.967" endtime="20220729 11:19:48.981"/>
+</iter>
+<iter>
+<var name="${website}">http://www.nashvillemojo.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:48.981" endtime="20220729 11:19:48.981"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:48.982" level="INFO">Executing JavaScript:
+window.open("http://www.nashvillemojo.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:48.981" endtime="20220729 11:19:48.994"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:48.981" endtime="20220729 11:19:48.994"/>
+</iter>
+<iter>
+<var name="${website}">http://www.christiansdating.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:48.995" endtime="20220729 11:19:48.995"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:48.995" level="INFO">Executing JavaScript:
+window.open("http://www.christiansdating.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:48.995" endtime="20220729 11:19:49.007"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:48.995" endtime="20220729 11:19:49.007"/>
+</iter>
+<iter>
+<var name="${website}">http://www.teenrotica.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.007" endtime="20220729 11:19:49.007"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.008" level="INFO">Executing JavaScript:
+window.open("http://www.teenrotica.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.007" endtime="20220729 11:19:49.023"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.007" endtime="20220729 11:19:49.023"/>
+</iter>
+<iter>
+<var name="${website}">http://www.salsatap.net/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.023" endtime="20220729 11:19:49.023"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.023" level="INFO">Executing JavaScript:
+window.open("http://www.salsatap.net/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.023" endtime="20220729 11:19:49.037"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.023" endtime="20220729 11:19:49.037"/>
+</iter>
+<iter>
+<var name="${website}">http://www.mbgolfpros.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.037" endtime="20220729 11:19:49.037"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.037" level="INFO">Executing JavaScript:
+window.open("http://www.mbgolfpros.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.037" endtime="20220729 11:19:49.049"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.037" endtime="20220729 11:19:49.049"/>
+</iter>
+<iter>
+<var name="${website}">http://sedoparking.com/parking.php4?domain=www.sexseite.info</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.050" endtime="20220729 11:19:49.050"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.050" level="INFO">Executing JavaScript:
+window.open("http://sedoparking.com/parking.php4?domain=www.sexseite.info")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.050" endtime="20220729 11:19:49.061"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.050" endtime="20220729 11:19:49.061"/>
+</iter>
+<iter>
+<var name="${website}">http://www.copcum.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.061" endtime="20220729 11:19:49.062"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.062" level="INFO">Executing JavaScript:
+window.open("http://www.copcum.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.062" endtime="20220729 11:19:49.078"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.061" endtime="20220729 11:19:49.078"/>
+</iter>
+<iter>
+<var name="${website}">http://www.planet-pcengine.de/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.078" endtime="20220729 11:19:49.078"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.079" level="INFO">Executing JavaScript:
+window.open("http://www.planet-pcengine.de/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.078" endtime="20220729 11:19:49.093"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.078" endtime="20220729 11:19:49.093"/>
+</iter>
+<iter>
+<var name="${website}">http://www.firstlady-gc.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.093" endtime="20220729 11:19:49.094"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.094" level="INFO">Executing JavaScript:
+window.open("http://www.firstlady-gc.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.094" endtime="20220729 11:19:49.106"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.093" endtime="20220729 11:19:49.106"/>
+</iter>
+<iter>
+<var name="${website}">http://www.notchet.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.107" endtime="20220729 11:19:49.107"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.107" level="INFO">Executing JavaScript:
+window.open("http://www.notchet.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.107" endtime="20220729 11:19:49.119"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.106" endtime="20220729 11:19:49.119"/>
+</iter>
+<iter>
+<var name="${website}">http://www.primarygames.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.120" endtime="20220729 11:19:49.120"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.120" level="INFO">Executing JavaScript:
+window.open("http://www.primarygames.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.120" endtime="20220729 11:19:49.132"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.120" endtime="20220729 11:19:49.132"/>
+</iter>
+<iter>
+<var name="${website}">http://www.hoppeirene.de/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.132" endtime="20220729 11:19:49.133"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.133" level="INFO">Executing JavaScript:
+window.open("http://www.hoppeirene.de/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.133" endtime="20220729 11:19:49.147"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.132" endtime="20220729 11:19:49.147"/>
+</iter>
+<iter>
+<var name="${website}">http://www.inquestmag.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.147" endtime="20220729 11:19:49.148"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.153" level="INFO">Executing JavaScript:
+window.open("http://www.inquestmag.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.153" endtime="20220729 11:19:49.165"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.147" endtime="20220729 11:19:49.165"/>
+</iter>
+<iter>
+<var name="${website}">http://www.diceext.com/utility2007/ostg.xml?cacheKiller=1207788646165</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.165" endtime="20220729 11:19:49.165"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.166" level="INFO">Executing JavaScript:
+window.open("http://www.diceext.com/utility2007/ostg.xml?cacheKiller=1207788646165")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.165" endtime="20220729 11:19:49.178"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.165" endtime="20220729 11:19:49.178"/>
+</iter>
+<iter>
+<var name="${website}">http://www.lesbianonlinecommunity.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.178" endtime="20220729 11:19:49.178"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.179" level="INFO">Executing JavaScript:
+window.open("http://www.lesbianonlinecommunity.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.178" endtime="20220729 11:19:49.191"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.178" endtime="20220729 11:19:49.191"/>
+</iter>
+<iter>
+<var name="${website}">http://www.sexswingstore.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.191" endtime="20220729 11:19:49.191"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.191" level="INFO">Executing JavaScript:
+window.open("http://www.sexswingstore.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.191" endtime="20220729 11:19:49.204"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.191" endtime="20220729 11:19:49.204"/>
+</iter>
+<iter>
+<var name="${website}">http://www.smilejokes.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.204" endtime="20220729 11:19:49.204"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.205" level="INFO">Executing JavaScript:
+window.open("http://www.smilejokes.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.204" endtime="20220729 11:19:49.223"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.204" endtime="20220729 11:19:49.223"/>
+</iter>
+<iter>
+<var name="${website}">http://www.donbartlettclassic.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.223" endtime="20220729 11:19:49.223"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.223" level="INFO">Executing JavaScript:
+window.open("http://www.donbartlettclassic.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.223" endtime="20220729 11:19:49.237"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.223" endtime="20220729 11:19:49.237"/>
+</iter>
+<iter>
+<var name="${website}">http://www.bestonlineroulette.net/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.237" endtime="20220729 11:19:49.237"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.238" level="INFO">Executing JavaScript:
+window.open("http://www.bestonlineroulette.net/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.237" endtime="20220729 11:19:49.250"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.237" endtime="20220729 11:19:49.250"/>
+</iter>
+<iter>
+<var name="${website}">http://www.flightvehicles.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.251" endtime="20220729 11:19:49.251"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.252" level="INFO">Executing JavaScript:
+window.open("http://www.flightvehicles.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.251" endtime="20220729 11:19:49.265"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.250" endtime="20220729 11:19:49.265"/>
+</iter>
+<iter>
+<var name="${website}">http://www.weaselcircus.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.265" endtime="20220729 11:19:49.265"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.265" level="INFO">Executing JavaScript:
+window.open("http://www.weaselcircus.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.265" endtime="20220729 11:19:49.280"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.265" endtime="20220729 11:19:49.280"/>
+</iter>
+<iter>
+<var name="${website}">http://www.hellfighters.dk/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.280" endtime="20220729 11:19:49.280"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.281" level="INFO">Executing JavaScript:
+window.open("http://www.hellfighters.dk/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.280" endtime="20220729 11:19:49.295"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.280" endtime="20220729 11:19:49.295"/>
+</iter>
+<iter>
+<var name="${website}">http://www.krawall.de/web/home/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.295" endtime="20220729 11:19:49.296"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.306" level="INFO">Executing JavaScript:
+window.open("http://www.krawall.de/web/home/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.296" endtime="20220729 11:19:49.318"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.295" endtime="20220729 11:19:49.318"/>
+</iter>
+<iter>
+<var name="${website}">http://www.mp3mega.net/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.318" endtime="20220729 11:19:49.318"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.319" level="INFO">Executing JavaScript:
+window.open("http://www.mp3mega.net/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.319" endtime="20220729 11:19:49.331"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.318" endtime="20220729 11:19:49.332"/>
+</iter>
+<iter>
+<var name="${website}">http://www.onlinefantasysports.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.332" endtime="20220729 11:19:49.332"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.332" level="INFO">Executing JavaScript:
+window.open("http://www.onlinefantasysports.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.332" endtime="20220729 11:19:49.346"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.332" endtime="20220729 11:19:49.346"/>
+</iter>
+<iter>
+<var name="${website}">http://www.golfturkey.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.346" endtime="20220729 11:19:49.346"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.346" level="INFO">Executing JavaScript:
+window.open("http://www.golfturkey.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.346" endtime="20220729 11:19:49.360"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.346" endtime="20220729 11:19:49.360"/>
+</iter>
+<iter>
+<var name="${website}">http://www.crazy-soft.info/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.360" endtime="20220729 11:19:49.361"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.361" level="INFO">Executing JavaScript:
+window.open("http://www.crazy-soft.info/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.361" endtime="20220729 11:19:49.373"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.360" endtime="20220729 11:19:49.373"/>
+</iter>
+<iter>
+<var name="${website}">http://www.steven-estrada.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.374" endtime="20220729 11:19:49.374"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.374" level="INFO">Executing JavaScript:
+window.open("http://www.steven-estrada.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.374" endtime="20220729 11:19:49.388"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.373" endtime="20220729 11:19:49.388"/>
+</iter>
+<iter>
+<var name="${website}">http://www.abcworld.net/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.388" endtime="20220729 11:19:49.388"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.388" level="INFO">Executing JavaScript:
+window.open("http://www.abcworld.net/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.388" endtime="20220729 11:19:49.400"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.388" endtime="20220729 11:19:49.400"/>
+</iter>
+<iter>
+<var name="${website}">http://www.arabhackerz.org/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.400" endtime="20220729 11:19:49.401"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.401" level="INFO">Executing JavaScript:
+window.open("http://www.arabhackerz.org/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.401" endtime="20220729 11:19:49.418"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.400" endtime="20220729 11:19:49.418"/>
+</iter>
+<iter>
+<var name="${website}">http://www.cheatkingdom.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.418" endtime="20220729 11:19:49.418"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.419" level="INFO">Executing JavaScript:
+window.open("http://www.cheatkingdom.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.418" endtime="20220729 11:19:49.431"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.418" endtime="20220729 11:19:49.432"/>
+</iter>
+<iter>
+<var name="${website}">http://static.sourceforge.net/include/thickbox/thickbox.php?secure=0&amp;20080327-1035</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.432" endtime="20220729 11:19:49.432"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.432" level="INFO">Executing JavaScript:
+window.open("http://static.sourceforge.net/include/thickbox/thickbox.php?secure=0&amp;20080327-1035")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.432" endtime="20220729 11:19:49.446"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.432" endtime="20220729 11:19:49.446"/>
+</iter>
+<iter>
+<var name="${website}">http://www.cartoonnet.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.446" endtime="20220729 11:19:49.446"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.447" level="INFO">Executing JavaScript:
+window.open("http://www.cartoonnet.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.446" endtime="20220729 11:19:49.460"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.446" endtime="20220729 11:19:49.460"/>
+</iter>
+<iter>
+<var name="${website}">http://www.relationshipclinic.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.460" endtime="20220729 11:19:49.460"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.461" level="INFO">Executing JavaScript:
+window.open("http://www.relationshipclinic.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.460" endtime="20220729 11:19:49.473"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.460" endtime="20220729 11:19:49.473"/>
+</iter>
+<iter>
+<var name="${website}">http://www.stevoshop.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.474" endtime="20220729 11:19:49.474"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.474" level="INFO">Executing JavaScript:
+window.open("http://www.stevoshop.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.474" endtime="20220729 11:19:49.490"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.473" endtime="20220729 11:19:49.490"/>
+</iter>
+<iter>
+<var name="${website}">http://www.spinon.co.uk/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.490" endtime="20220729 11:19:49.490"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.491" level="INFO">Executing JavaScript:
+window.open("http://www.spinon.co.uk/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.490" endtime="20220729 11:19:49.503"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.490" endtime="20220729 11:19:49.503"/>
+</iter>
+<iter>
+<var name="${website}">http://www.hypedup.co.uk/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.503" endtime="20220729 11:19:49.503"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.503" level="INFO">Executing JavaScript:
+window.open("http://www.hypedup.co.uk/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.503" endtime="20220729 11:19:49.516"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.503" endtime="20220729 11:19:49.516"/>
+</iter>
+<iter>
+<var name="${website}">http://www.card-trick.net/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.516" endtime="20220729 11:19:49.516"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.517" level="INFO">Executing JavaScript:
+window.open("http://www.card-trick.net/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.517" endtime="20220729 11:19:49.532"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.516" endtime="20220729 11:19:49.532"/>
+</iter>
+<iter>
+<var name="${website}">http://www.kitashinchi.net/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.532" endtime="20220729 11:19:49.532"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.532" level="INFO">Executing JavaScript:
+window.open("http://www.kitashinchi.net/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.532" endtime="20220729 11:19:49.547"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.532" endtime="20220729 11:19:49.547"/>
+</iter>
+<iter>
+<var name="${website}">http://www.fightchannel.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.547" endtime="20220729 11:19:49.548"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.548" level="INFO">Executing JavaScript:
+window.open("http://www.fightchannel.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.548" endtime="20220729 11:19:49.562"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.547" endtime="20220729 11:19:49.562"/>
+</iter>
+<iter>
+<var name="${website}">http://www.softwarestar.co.uk/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.562" endtime="20220729 11:19:49.562"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.562" level="INFO">Executing JavaScript:
+window.open("http://www.softwarestar.co.uk/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.562" endtime="20220729 11:19:49.575"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.562" endtime="20220729 11:19:49.575"/>
+</iter>
+<iter>
+<var name="${website}">http://www.desenfocados.cl/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.575" endtime="20220729 11:19:49.575"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.576" level="INFO">Executing JavaScript:
+window.open("http://www.desenfocados.cl/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.575" endtime="20220729 11:19:49.590"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.575" endtime="20220729 11:19:49.590"/>
+</iter>
+<iter>
+<var name="${website}">http://www.duckhunting.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.591" endtime="20220729 11:19:49.591"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.591" level="INFO">Executing JavaScript:
+window.open("http://www.duckhunting.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.591" endtime="20220729 11:19:49.604"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.591" endtime="20220729 11:19:49.604"/>
+</iter>
+<iter>
+<var name="${website}">http://www.shopping.se/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.604" endtime="20220729 11:19:49.604"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.605" level="INFO">Executing JavaScript:
+window.open("http://www.shopping.se/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.605" endtime="20220729 11:19:49.627"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.604" endtime="20220729 11:19:49.627"/>
+</iter>
+<iter>
+<var name="${website}">http://www.jenniferimages.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.627" endtime="20220729 11:19:49.627"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.627" level="INFO">Executing JavaScript:
+window.open("http://www.jenniferimages.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.627" endtime="20220729 11:19:49.640"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.627" endtime="20220729 11:19:49.640"/>
+</iter>
+<iter>
+<var name="${website}">http://www.computerbild.de/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.640" endtime="20220729 11:19:49.640"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.640" level="INFO">Executing JavaScript:
+window.open("http://www.computerbild.de/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.640" endtime="20220729 11:19:49.653"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.640" endtime="20220729 11:19:49.653"/>
+</iter>
+<iter>
+<var name="${website}">http://www.thegaychat.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.653" endtime="20220729 11:19:49.653"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.654" level="INFO">Executing JavaScript:
+window.open("http://www.thegaychat.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.654" endtime="20220729 11:19:49.667"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.653" endtime="20220729 11:19:49.667"/>
+</iter>
+<iter>
+<var name="${website}">http://www.poolshark.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.667" endtime="20220729 11:19:49.668"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.668" level="INFO">Executing JavaScript:
+window.open("http://www.poolshark.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.668" endtime="20220729 11:19:49.683"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.667" endtime="20220729 11:19:49.684"/>
+</iter>
+<iter>
+<var name="${website}">http://www.grusskartenfreund.de/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.684" endtime="20220729 11:19:49.684"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.684" level="INFO">Executing JavaScript:
+window.open("http://www.grusskartenfreund.de/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.684" endtime="20220729 11:19:49.698"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.684" endtime="20220729 11:19:49.698"/>
+</iter>
+<iter>
+<var name="${website}">http://www.ilparleaveclesloups.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.698" endtime="20220729 11:19:49.698"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.698" level="INFO">Executing JavaScript:
+window.open("http://www.ilparleaveclesloups.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.698" endtime="20220729 11:19:49.716"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.698" endtime="20220729 11:19:49.716"/>
+</iter>
+<iter>
+<var name="${website}">http://www.thecpl.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.716" endtime="20220729 11:19:49.716"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.716" level="INFO">Executing JavaScript:
+window.open("http://www.thecpl.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.716" endtime="20220729 11:19:49.731"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.716" endtime="20220729 11:19:49.731"/>
+</iter>
+<iter>
+<var name="${website}">http://www.yumenotobira.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.731" endtime="20220729 11:19:49.731"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.732" level="INFO">Executing JavaScript:
+window.open("http://www.yumenotobira.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.732" endtime="20220729 11:19:49.758"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.731" endtime="20220729 11:19:49.758"/>
+</iter>
+<iter>
+<var name="${website}">http://www.pokemon.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.758" endtime="20220729 11:19:49.758"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.758" level="INFO">Executing JavaScript:
+window.open("http://www.pokemon.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.758" endtime="20220729 11:19:49.773"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.758" endtime="20220729 11:19:49.773"/>
+</iter>
+<iter>
+<var name="${website}">http://www.damnwitty.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.773" endtime="20220729 11:19:49.773"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.774" level="INFO">Executing JavaScript:
+window.open("http://www.damnwitty.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.773" endtime="20220729 11:19:49.790"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.773" endtime="20220729 11:19:49.790"/>
+</iter>
+<iter>
+<var name="${website}">http://www.cruiseathong.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.790" endtime="20220729 11:19:49.790"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.791" level="INFO">Executing JavaScript:
+window.open("http://www.cruiseathong.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.790" endtime="20220729 11:19:49.807"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.790" endtime="20220729 11:19:49.807"/>
+</iter>
+<iter>
+<var name="${website}">http://www.vagaytion.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.807" endtime="20220729 11:19:49.807"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.807" level="INFO">Executing JavaScript:
+window.open("http://www.vagaytion.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.807" endtime="20220729 11:19:49.824"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.807" endtime="20220729 11:19:49.824"/>
+</iter>
+<iter>
+<var name="${website}">http://www.snakk.nu/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.824" endtime="20220729 11:19:49.825"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.825" level="INFO">Executing JavaScript:
+window.open("http://www.snakk.nu/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.825" endtime="20220729 11:19:49.841"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.824" endtime="20220729 11:19:49.841"/>
+</iter>
+<iter>
+<var name="${website}">http://clubcats.net/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.842" endtime="20220729 11:19:49.842"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.842" level="INFO">Executing JavaScript:
+window.open("http://clubcats.net/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.842" endtime="20220729 11:19:49.859"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.841" endtime="20220729 11:19:49.859"/>
+</iter>
+<iter>
+<var name="${website}">http://www.collegemix.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.859" endtime="20220729 11:19:49.859"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.859" level="INFO">Executing JavaScript:
+window.open("http://www.collegemix.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.859" endtime="20220729 11:19:49.875"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.859" endtime="20220729 11:19:49.875"/>
+</iter>
+<iter>
+<var name="${website}">http://www.a4u.jp/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.875" endtime="20220729 11:19:49.876"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.876" level="INFO">Executing JavaScript:
+window.open("http://www.a4u.jp/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.876" endtime="20220729 11:19:49.892"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.875" endtime="20220729 11:19:49.892"/>
+</iter>
+<iter>
+<var name="${website}">http://www.buy-wii-online.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.892" endtime="20220729 11:19:49.893"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.893" level="INFO">Executing JavaScript:
+window.open("http://www.buy-wii-online.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.893" endtime="20220729 11:19:49.907"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.892" endtime="20220729 11:19:49.907"/>
+</iter>
+<iter>
+<var name="${website}">http://www.hot-cafe.net/present/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.907" endtime="20220729 11:19:49.908"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.908" level="INFO">Executing JavaScript:
+window.open("http://www.hot-cafe.net/present/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.908" endtime="20220729 11:19:49.924"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.907" endtime="20220729 11:19:49.924"/>
+</iter>
+<iter>
+<var name="${website}">http://www.amaranthia.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.924" endtime="20220729 11:19:49.924"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.924" level="INFO">Executing JavaScript:
+window.open("http://www.amaranthia.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.924" endtime="20220729 11:19:49.940"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.924" endtime="20220729 11:19:49.940"/>
+</iter>
+<iter>
+<var name="${website}">http://www.eadultgames.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.941" endtime="20220729 11:19:49.941"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.941" level="INFO">Executing JavaScript:
+window.open("http://www.eadultgames.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.941" endtime="20220729 11:19:49.959"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.940" endtime="20220729 11:19:49.959"/>
+</iter>
+<iter>
+<var name="${website}">http://www.free.fr/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.959" endtime="20220729 11:19:49.960"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.960" level="INFO">Executing JavaScript:
+window.open("http://www.free.fr/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.960" endtime="20220729 11:19:49.974"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.959" endtime="20220729 11:19:49.974"/>
+</iter>
+<iter>
+<var name="${website}">http://www.eazywarez.tk/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.974" endtime="20220729 11:19:49.974"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.975" level="INFO">Executing JavaScript:
+window.open("http://www.eazywarez.tk/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.974" endtime="20220729 11:19:49.990"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.974" endtime="20220729 11:19:49.990"/>
+</iter>
+<iter>
+<var name="${website}">http://www.sbermprod.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:49.990" endtime="20220729 11:19:49.990"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:49.991" level="INFO">Executing JavaScript:
+window.open("http://www.sbermprod.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:49.990" endtime="20220729 11:19:50.007"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:49.990" endtime="20220729 11:19:50.007"/>
+</iter>
+<iter>
+<var name="${website}">http://www.hackbert.net/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:50.007" endtime="20220729 11:19:50.007"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:50.008" level="INFO">Executing JavaScript:
+window.open("http://www.hackbert.net/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:50.007" endtime="20220729 11:19:50.025"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:50.007" endtime="20220729 11:19:50.025"/>
+</iter>
+<iter>
+<var name="${website}">http://www.knkonline.net/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:50.025" endtime="20220729 11:19:50.025"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:50.025" level="INFO">Executing JavaScript:
+window.open("http://www.knkonline.net/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:50.025" endtime="20220729 11:19:50.040"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:50.025" endtime="20220729 11:19:50.040"/>
+</iter>
+<iter>
+<var name="${website}">http://www.thinkbingoplus.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:50.040" endtime="20220729 11:19:50.040"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:50.041" level="INFO">Executing JavaScript:
+window.open("http://www.thinkbingoplus.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:50.040" endtime="20220729 11:19:50.056"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:50.040" endtime="20220729 11:19:50.056"/>
+</iter>
+<iter>
+<var name="${website}">http://m1.2mdn.net/1565468/468x60_040408_FREE_RAZR.swf?clickTag=http%3A//ad.doubleclick.net/click%253Bh%3Dv8/369e/f/98/%252a/i%253B197878970%253B1-0%253B0%253B25936752%253B1-468/60%253B25737329/257551...</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:50.056" endtime="20220729 11:19:50.056"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:50.057" level="INFO">Executing JavaScript:
+window.open("http://m1.2mdn.net/1565468/468x60_040408_FREE_RAZR.swf?clickTag=http%3A//ad.doubleclick.net/click%253Bh%3Dv8/369e/f/98/%252a/i%253B197878970%253B1-0%253B0%253B25936752%253B1-468/60%253B25737329/25755183/1%253B%253B%257Esscs%253D%253fhttp%3A//servedby.advertising.com/click/site%3D0000693908/mnum%3D0000527606/cstr%3D36283124%3D_47fd6486%2C1709670028%2C693908%255E527606%255E1%255E0%2C1_/bnum%3D36283124/optn%3D64%3Ftrg%3Dhttp%253a%252f%252fwww.verizonwireless.com/b2c/splash/splash.jsp%253Fv%253D13")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:50.056" endtime="20220729 11:19:50.072"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:50.056" endtime="20220729 11:19:50.072"/>
+</iter>
+<iter>
+<var name="${website}">http://www.fresh-ringtone.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:50.072" endtime="20220729 11:19:50.073"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:50.073" level="INFO">Executing JavaScript:
+window.open("http://www.fresh-ringtone.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:50.073" endtime="20220729 11:19:50.112"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:50.072" endtime="20220729 11:19:50.112"/>
+</iter>
+<iter>
+<var name="${website}">http://www.ufotechnology.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:50.112" endtime="20220729 11:19:50.112"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:50.112" level="INFO">Executing JavaScript:
+window.open("http://www.ufotechnology.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:50.112" endtime="20220729 11:19:50.131"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:50.112" endtime="20220729 11:19:50.131"/>
+</iter>
+<iter>
+<var name="${website}">http://www.topsites24.de/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:50.131" endtime="20220729 11:19:50.131"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:50.131" level="INFO">Executing JavaScript:
+window.open("http://www.topsites24.de/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:50.131" endtime="20220729 11:19:50.147"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:50.131" endtime="20220729 11:19:50.147"/>
+</iter>
+<iter>
+<var name="${website}">http://www.jigglysfunhouse.net/nukeevo/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:50.147" endtime="20220729 11:19:50.147"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:50.148" level="INFO">Executing JavaScript:
+window.open("http://www.jigglysfunhouse.net/nukeevo/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:50.147" endtime="20220729 11:19:50.161"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:50.147" endtime="20220729 11:19:50.161"/>
+</iter>
+<iter>
+<var name="${website}">http://www.sexfreedownloads.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:50.161" endtime="20220729 11:19:50.161"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:50.161" level="INFO">Executing JavaScript:
+window.open("http://www.sexfreedownloads.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:50.161" endtime="20220729 11:19:50.175"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:50.161" endtime="20220729 11:19:50.175"/>
+</iter>
+<iter>
+<var name="${website}">http://a.tribalfusion.com/j.ad?site=sourceforge&amp;adSpace=ros&amp;size=120x600&amp;p=8485566&amp;a=1&amp;flashVer=9&amp;ver=1.14&amp;center=1&amp;noAd=1&amp;url=http%3A%2F%2Fsourceforge.net%2Fsearch%2Findex.php&amp;rurl=http%3A%2F%2Fsourc...</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:50.175" endtime="20220729 11:19:50.175"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:50.175" level="INFO">Executing JavaScript:
+window.open("http://a.tribalfusion.com/j.ad?site=sourceforge&amp;adSpace=ros&amp;size=120x600&amp;p=8485566&amp;a=1&amp;flashVer=9&amp;ver=1.14&amp;center=1&amp;noAd=1&amp;url=http%3A%2F%2Fsourceforge.net%2Fsearch%2Findex.php&amp;rurl=http%3A%2F%2Fsourceforge.net%2Fsearch%2F&amp;rnd=8485702")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:50.175" endtime="20220729 11:19:50.189"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:50.175" endtime="20220729 11:19:50.189"/>
+</iter>
+<iter>
+<var name="${website}">http://www.kdlab.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:50.189" endtime="20220729 11:19:50.189"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:50.190" level="INFO">Executing JavaScript:
+window.open("http://www.kdlab.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:50.189" endtime="20220729 11:19:50.202"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:50.189" endtime="20220729 11:19:50.202"/>
+</iter>
+<iter>
+<var name="${website}">http://www.sercretslumberparty.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:50.202" endtime="20220729 11:19:50.203"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:50.203" level="INFO">Executing JavaScript:
+window.open("http://www.sercretslumberparty.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:50.203" endtime="20220729 11:19:50.219"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:50.202" endtime="20220729 11:19:50.219"/>
+</iter>
+<iter>
+<var name="${website}">http://www.nur-games.de/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:50.219" endtime="20220729 11:19:50.219"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:50.220" level="INFO">Executing JavaScript:
+window.open("http://www.nur-games.de/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:50.219" endtime="20220729 11:19:50.233"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:50.219" endtime="20220729 11:19:50.233"/>
+</iter>
+<iter>
+<var name="${website}">http://www.gameswarehouse.com.au/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:50.233" endtime="20220729 11:19:50.233"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:50.234" level="INFO">Executing JavaScript:
+window.open("http://www.gameswarehouse.com.au/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:50.233" endtime="20220729 11:19:50.247"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:50.233" endtime="20220729 11:19:50.247"/>
+</iter>
+<iter>
+<var name="${website}">http://landing.domainsponsor.com/load.mas?epl=00750010R1UMXGYWVlEFDVdTClBXBVUFVxEHWloACFtbWVVRDBBeWw1UFwZcWUdfEhcFCgBVR1U5XgcIA1c</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:50.247" endtime="20220729 11:19:50.247"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:50.247" level="INFO">Executing JavaScript:
+window.open("http://landing.domainsponsor.com/load.mas?epl=00750010R1UMXGYWVlEFDVdTClBXBVUFVxEHWloACFtbWVVRDBBeWw1UFwZcWUdfEhcFCgBVR1U5XgcIA1c")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:50.247" endtime="20220729 11:19:50.259"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:50.247" endtime="20220729 11:19:50.259"/>
+</iter>
+<iter>
+<var name="${website}">http://www.shiliuqun.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:50.259" endtime="20220729 11:19:50.259"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:50.259" level="INFO">Executing JavaScript:
+window.open("http://www.shiliuqun.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:50.259" endtime="20220729 11:19:50.272"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:50.259" endtime="20220729 11:19:50.272"/>
+</iter>
+<iter>
+<var name="${website}">http://www.battlefoundry.net/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:50.273" endtime="20220729 11:19:50.273"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:50.273" level="INFO">Executing JavaScript:
+window.open("http://www.battlefoundry.net/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:50.273" endtime="20220729 11:19:50.291"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:50.272" endtime="20220729 11:19:50.291"/>
+</iter>
+<iter>
+<var name="${website}">http://www.2focus.org/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:50.291" endtime="20220729 11:19:50.291"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:50.291" level="INFO">Executing JavaScript:
+window.open("http://www.2focus.org/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:50.291" endtime="20220729 11:19:50.304"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:50.291" endtime="20220729 11:19:50.305"/>
+</iter>
+<iter>
+<var name="${website}">http://www.cyberextruder.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:50.305" endtime="20220729 11:19:50.305"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:50.305" level="INFO">Executing JavaScript:
+window.open("http://www.cyberextruder.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:50.305" endtime="20220729 11:19:50.318"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:50.305" endtime="20220729 11:19:50.318"/>
+</iter>
+<iter>
+<var name="${website}">http://www.funquizcards.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:50.318" endtime="20220729 11:19:50.318"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:50.318" level="INFO">Executing JavaScript:
+window.open("http://www.funquizcards.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:50.318" endtime="20220729 11:19:50.332"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:50.318" endtime="20220729 11:19:50.332"/>
+</iter>
+<iter>
+<var name="${website}">http://www.utterlyfree.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:50.332" endtime="20220729 11:19:50.332"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:50.332" level="INFO">Executing JavaScript:
+window.open("http://www.utterlyfree.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:50.332" endtime="20220729 11:19:50.347"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:50.332" endtime="20220729 11:19:50.347"/>
+</iter>
+<iter>
+<var name="${website}">http://www.softartstudio.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:50.347" endtime="20220729 11:19:50.347"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:50.348" level="INFO">Executing JavaScript:
+window.open("http://www.softartstudio.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:50.347" endtime="20220729 11:19:50.362"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:50.347" endtime="20220729 11:19:50.362"/>
+</iter>
+<iter>
+<var name="${website}">http://www.bbwcentury.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:50.362" endtime="20220729 11:19:50.362"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:50.362" level="INFO">Executing JavaScript:
+window.open("http://www.bbwcentury.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:50.362" endtime="20220729 11:19:50.375"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:50.362" endtime="20220729 11:19:50.375"/>
+</iter>
+<iter>
+<var name="${website}">http://www.go-boom.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:50.376" endtime="20220729 11:19:50.376"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:50.376" level="INFO">Executing JavaScript:
+window.open("http://www.go-boom.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:50.376" endtime="20220729 11:19:50.389"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:50.375" endtime="20220729 11:19:50.389"/>
+</iter>
+<iter>
+<var name="${website}">http://www.j168.com/</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${website}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220729 11:19:50.389" endtime="20220729 11:19:50.389"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open("${website}")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220729 11:19:50.390" level="INFO">Executing JavaScript:
+window.open("http://www.j168.com/")
+Without any arguments.</msg>
+<status status="PASS" starttime="20220729 11:19:50.390" endtime="20220729 11:19:50.403"/>
+</kw>
+<status status="PASS" starttime="20220729 11:19:50.389" endtime="20220729 11:19:50.403"/>
+</iter>
+<status status="PASS" starttime="20220729 11:19:48.782" endtime="20220729 11:19:50.403"/>
 </for>
 <kw name="Evaluate" library="BuiltIn">
 <var>${counter}</var>
 <arg>${counter}+1</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20220727 17:38:54.132" level="INFO">${counter} = 1</msg>
-<status status="PASS" starttime="20220727 17:38:54.132" endtime="20220727 17:38:54.132"/>
+<msg timestamp="20220729 11:19:50.403" level="INFO">${counter} = 1</msg>
+<status status="PASS" starttime="20220729 11:19:50.403" endtime="20220729 11:19:50.403"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${counter}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220727 17:38:54.132" endtime="20220727 17:38:54.132"/>
+<status status="PASS" starttime="20220729 11:19:50.403" endtime="20220729 11:19:50.403"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${from},${to},${user}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220727 17:38:54.132" endtime="20220727 17:38:54.133"/>
+<status status="PASS" starttime="20220729 11:19:50.403" endtime="20220729 11:19:50.403"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>10</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220727 17:39:04.135" level="INFO">Slept 10 seconds</msg>
-<status status="PASS" starttime="20220727 17:38:54.133" endtime="20220727 17:39:04.136"/>
+<msg timestamp="20220729 11:20:00.405" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20220729 11:19:50.403" endtime="20220729 11:20:00.405"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220727 17:39:04.136" endtime="20220727 17:39:04.206"/>
+<status status="PASS" starttime="20220729 11:20:00.405" endtime="20220729 11:20:00.548"/>
 </kw>
-<status status="PASS" starttime="20220727 17:38:34.034" endtime="20220727 17:39:04.206"/>
+<status status="PASS" starttime="20220729 11:19:21.681" endtime="20220729 11:20:00.548"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>1</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220727 17:39:04.206" endtime="20220727 17:39:04.207"/>
+<status status="PASS" starttime="20220729 11:20:00.548" endtime="20220729 11:20:00.548"/>
 </kw>
-<status status="PASS" starttime="20220727 17:38:34.034" endtime="20220727 17:39:04.207"/>
+<status status="PASS" starttime="20220729 11:19:21.681" endtime="20220729 11:20:00.548"/>
 </iter>
-<status status="PASS" starttime="20220727 17:38:34.034" endtime="20220727 17:39:04.207"/>
+<status status="PASS" starttime="20220729 11:19:21.680" endtime="20220729 11:20:00.548"/>
 </for>
-<status status="PASS" starttime="20220727 17:38:34.032" endtime="20220727 17:39:04.207"/>
+<status status="PASS" starttime="20220729 11:19:21.679" endtime="20220729 11:20:00.548"/>
 </test>
-<status status="PASS" starttime="20220727 17:38:33.469" endtime="20220727 17:39:04.213"/>
+<status status="PASS" starttime="20220729 11:19:20.974" endtime="20220729 11:20:00.550"/>
 </suite>
 <statistics>
 <total>
@@ -213,7 +1914,7 @@ Without any arguments.</msg>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Traffic01">Traffic01</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Traffic04">Traffic04</stat>
 </suite>
 </statistics>
 <errors>

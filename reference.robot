@@ -17,7 +17,7 @@ ${options}      add_argument("--ignore-certificate-errors")
 *** Test Cases ***
 
 Open browser with proxy  
-    FOR     ${user}     IN         @{users}         @{websites}
-        Open browser with proxy with user       ${user}
+    FOR     ${user}     IN         @{users}         
+        Open browser with proxy with user       ${user}         ${websites}
         Log to console      1
     END

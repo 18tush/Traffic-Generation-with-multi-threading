@@ -14,11 +14,11 @@ ${options}      add_argument("--ignore-certificate-errors")
 
 ***Keywords***
 Open browser with proxy with user
-    [Arguments]     ${user}        ${websites}
+    [Arguments]     ${user}     ${websites}
         ${caps}=  Evaluate  sys.modules['selenium.webdriver'].DesiredCapabilities.CHROME  sys, selenium.webdriver
         ${proxy}=  Create dictionary  proxyType=MANUAL  sslProxy=${ip_port}         httpProxy=${ip_port}
         Set to dictionary  ${caps}  proxy=${proxy}
-        SeleniumLibrary.Open Browser  https://ip.zscaler.com        browser=Chrome  desired_capabilities=${caps}       options=add_argument("--ignore-certificate-errors")               
+        SeleniumLibrary.Open Browser  https://ip.zscaler.com        browser=headlessChrome  desired_capabilities=${caps}       options=add_argument("--ignore-certificate-errors")               
         maximize browser window
 
         input text      xpath://*[@id="username_input"]         ${user}[0]

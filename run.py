@@ -43,8 +43,8 @@ for k in range(num_of_batches):
         to="@{users}["+str(k*batch_size+i)+':'+str(k*batch_size+1+i)+']'
         content1=[i.replace("@{users}",to) for i in content]
         x=(k*batch_size+1)*(len(websites)//(batch_size*num_of_batches))
-        web_to="@{websites}["+str(x)+':'+str(x+len(websites)//(batch_size*num_of_batches))+']'
-        content1=[i.replace("@{websites}",web_to) for i in content1]
+        web_to="${websites}["+str(x)+':'+str(x+len(websites)//(batch_size*num_of_batches))+']'
+        content1=[i.replace("${websites}",web_to) for i in content1]
         for line in content1:
             f1.write(line)
     # time.sleep(1)

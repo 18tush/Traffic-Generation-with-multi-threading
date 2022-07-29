@@ -90,6 +90,5 @@ print(per_user)
 print(websites)
 index=0
 
-
-batch_users=[]
+print(users)
 
