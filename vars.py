@@ -28,13 +28,13 @@ websites=[]
 for i in f:
     websites.append(i)
 shuffle(websites)
-websites=websites[:5]
+# websites=websites[:5]
 a=''
 
 websites=[i.rstrip('\n') for i in websites]
 shuffle(websites)
 # print(websites)
-websites=['http://www.aibai.cn/','http://www.beautyphoto.info/','http://www.loveadvice.info/','http://www.adultfilmclassics.com/']
+# websites=['http://www.aibai.cn/','http://www.beautyphoto.info/','http://www.loveadvice.info/','http://www.adultfilmclassics.com/']
 
 num_links=len(websites)
 
