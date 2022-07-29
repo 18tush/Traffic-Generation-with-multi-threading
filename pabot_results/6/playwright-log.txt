@@ -1,11 +1,5 @@
-{"level":30,"time":"2022-07-28T06:50:33.044Z","pid":7554,"hostname":"ITSupports-MacBook-Pro-2.local","msg":"Listening on 55888"}
-{"level":30,"time":"2022-07-28T06:50:33.072Z","pid":7554,"hostname":"ITSupports-MacBook-Pro-2.local","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2022-07-28T06:50:33.073Z","pid":7554,"hostname":"ITSupports-MacBook-Pro-2.local","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2022-07-28T06:50:33.076Z","pid":7554,"hostname":"ITSupports-MacBook-Pro-2.local","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2022-07-28T06:50:33.077Z","pid":7554,"hostname":"ITSupports-MacBook-Pro-2.local","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2022-07-28T06:51:07.629Z","pid":7554,"hostname":"ITSupports-MacBook-Pro-2.local","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2022-07-28T06:51:07.629Z","pid":7554,"hostname":"ITSupports-MacBook-Pro-2.local","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2022-07-28T06:51:07.633Z","pid":7554,"hostname":"ITSupports-MacBook-Pro-2.local","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2022-07-28T06:51:07.633Z","pid":7554,"hostname":"ITSupports-MacBook-Pro-2.local","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2022-07-28T06:51:07.638Z","pid":7554,"hostname":"ITSupports-MacBook-Pro-2.local","msg":"Start of node method closeAllBrowsers"}
-{"level":30,"time":"2022-07-28T06:51:07.638Z","pid":7554,"hostname":"ITSupports-MacBook-Pro-2.local","msg":"End of node method closeAllBrowsers"}
+{"level":30,"time":"2022-07-29T05:24:12.331Z","pid":4858,"hostname":"ITSupports-MacBook-Pro-2.local","msg":"Listening on 50117"}
+{"level":30,"time":"2022-07-29T05:24:12.399Z","pid":4858,"hostname":"ITSupports-MacBook-Pro-2.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2022-07-29T05:24:12.400Z","pid":4858,"hostname":"ITSupports-MacBook-Pro-2.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2022-07-29T05:24:12.404Z","pid":4858,"hostname":"ITSupports-MacBook-Pro-2.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2022-07-29T05:24:12.404Z","pid":4858,"hostname":"ITSupports-MacBook-Pro-2.local","msg":"End of node method getBrowserCatalog"}
